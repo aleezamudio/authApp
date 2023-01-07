@@ -1,6 +1,23 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
+body{
+  background-image: url('assets/images/bg-01.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+.resultOperation{
+  margin-top: -30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: aqua;
+  padding-top: 5px;
+}
+.operation{
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
 @font-face {
     font-family: Poppins-Regular;
     src: url('./assets/fonts/poppins/Poppins-Regular.ttf'); 

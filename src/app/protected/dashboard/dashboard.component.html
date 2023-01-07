@@ -1,12 +1,107 @@
-<h1>Dashboard</h1>
-<hr>
-<p>
-    Esta página solo funciona si estas autenticado
-</p>
+<div class="container"  >
+  <article>
+    <h1>Hola {{ usuario.name }}!!</h1>
+    <p>
+      
+      ya puedes usar la calculadora
+      
+      <i class="fa fa-calculator" aria-hidden="true"></i>
+    </p>
+  </article>
+  <div class="row text-center mt-2">
+    <div class="col-12">
+ 
+ 
+      <button
+      class="container-login100-form-btn"
+      class="login100-form-btn"
+      class="btn btn-outline-light btn-lg mb-2"
+        (click)="limpiar()"
+      >
+        <i class="fa fa-trash-o" aria-hidden="true"></i> Limpiar Historial
+      </button>
+        
+ 
+ 
+      
+      </div>
+      </div>
+  <div class="row mt-3 bg-dark full">
+    <!-- Calculadora -->
+    <div class="col-sm-6 mt-2 mb-2">
+      <div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="screen"
+            aria-label="Text input"
+          />
+        </div>
+      </div>
+      <div class="container text-center">
+        <b>
+          <h1>
+            <input type="button" (click)="enterValue('1')" value="1" />
+            <input type="button" (click)="enterValue('2')" value="2" />
+            <input type="button" (click)="enterValue('3')" value="3" />
+            <input type="button" (click)="condition('+')" value="+" />
+          </h1>
 
-<h4>User info</h4>
-<pre> {{ usuario | json }} </pre>
+          <h1>
+            <input type="button" (click)="enterValue('4')" value="4" />
+            <input type="button" (click)="enterValue('5')" value="5" />
+            <input type="button" (click)="enterValue('6')" value="6" />
+            <input type="button" (click)="condition('-')" value="-" />
+          </h1>
+          <h1>
+            <input type="button" (click)="enterValue('7')" value="7" />
+            <input type="button" (click)="enterValue('8')" value="8" />
+            <input type="button" (click)="enterValue('9')" value="9" />
+            <input type="button" (click)="condition('*')" value="*" />
+          </h1>
 
-<button (click)="logout()">
-Logout
-</button>
+          <h1>
+            <input type="button" (click)="enterValue('0')" value="0" />
+            <input type="button" (click)="condition('/')" value="/" />
+            <input type="button" (click)="result()" value="=" />
+            <input type="button" (click)="clear()" value="C" />
+          </h1>
+        </b>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="col-sm-6">
+      <div class="card bg-dark text-light" id="scroll">
+        <div class="card-title mr-2">
+          <i class="fa fa-history" aria-hidden="true"></i> Historial
+        </div>
+        <div
+          class="card-body scroll"
+          data-spy="scroll"
+          data-target="#scroll"
+          #mostrarOperaciones
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center mt-2">
+    <div class="col-12">
+
+
+      <button
+      class="login100-form-btn"
+      class="btn btn-outline-light btn-lg mb-2"
+      style="text-align: center"
+      (click)="logout()"
+    >
+    <i class="fas fa-sign-out-alt"></i> cerrar sesión
+    </button>
+
+     
+    </div>
+  </div>
+</div>
